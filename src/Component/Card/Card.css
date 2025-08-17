@@ -1,0 +1,49 @@
+ .card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+ .container {
+  border: 1px solid;
+  width: 400px;
+  height: 200px;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  scrollbar-width: none;  
+}
+
+.container::-webkit-scrollbar {
+  display: none; 
+}
+
+.completed{
+    color: green;
+}
+.pending{
+    color: red;
+}
+.in-progress{
+    color: blue;
+}
+
+@media (max-width: 625px) {
+    .container{
+        width: 500px;
+    }
+}
+@media (max-width: 550px) {
+    .card {
+        display: flex;
+        justify-content: center;
+    }
+    .container{
+        width: 300px;
+    }
+}
