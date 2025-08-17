@@ -28,12 +28,12 @@ const Task = (props) => {
       })
       setInProgress(newList)
   }
+  const isCompleted = props.from === 'completed'
+  const buttonLabel = props.from === 'pending' ? 'Start' : (props.from === 'in-progress' ? 'Complete' : 'Done')
   return (
-    <div className='con'>
-      <div className='task'>
-        <p>{props.title}</p>
-        <button onClick={() => changeItem(props.id, props.from)}>Start</button>
-      </div>
+    <div className='task'>
+      <p>{props.title}</p>
+      <button onClick={() => changeItem(props.id, props.from)} disabled={isCompleted}>{buttonLabel}</button>
     </div>
   )
 }
