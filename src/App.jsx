@@ -4,14 +4,14 @@ import Card from './Component/Card/Card'
 
 function App() {
   return (
-    <>
+    <main className='app-container'>
       <Input />
-      <div className='card'>
+      <div className='board'>
         <Card status='completed'/>
         <Card status='pending'/>
         <Card status='in-progress' />
       </div>
-    </>
+    </main>
   )
 }
 

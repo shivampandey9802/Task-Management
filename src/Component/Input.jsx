@@ -14,13 +14,15 @@ const Input = () => {
   // console.log(pending)
 
   return (
-    <div>
+    <div className="toolbar">
       <input 
+        type="text"
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        placeholder='Type here...'
+        placeholder='Add a task...'
+        aria-label='Add a task'
         />
-        <button onClick={addIntoPending}>ADD</button>
+        <button onClick={addIntoPending} disabled={!input.trim()}>ADD</button>
     </div>
   )
 }

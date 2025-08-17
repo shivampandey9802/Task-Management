@@ -1,38 +1,36 @@
 .task{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    color: blue;
     gap: 10px;
+    padding: 10px 12px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
 }
 
 .task p{
-    border: 1px solid;
-    width: 250px;
-    padding: 6px 8px;
-    text-align: start;
+    margin: 0;
+    flex: 1 1 auto;
+    min-width: 0;
+    color: var(--text);
 }
 .task button{
     border-radius: 10px;
-    font-size: 16px;
-    background-color: rgba(65, 147, 147, 0.768);
-    padding: 6px 8px;
+    font-size: 14px;
+    background-color: var(--primary);
+    color: #fff;
+    padding: 8px 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color .2s ease, transform .06s ease;
 }
-
+.task button:hover{ background-color: var(--primary-hover); }
+.task button:active{ transform: translateY(1px); }
 
 @media (max-width: 625px) {
-    .task p{
-        border: 1px solid;
-        width: 400px;
-        padding: 6px 8px;
-        text-align: start;
-    }
+    .task{ padding: 10px; }
 }
 @media (max-width: 550px) {
-    .task p{
-        border: 1px solid;
-        width: 200px;
-        padding: 6px 8px;
-        text-align: start;
-    }
+    .task{ padding: 8px; }
 }

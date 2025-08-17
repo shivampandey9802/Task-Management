@@ -1,49 +1,46 @@
- .card{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 20px;
+.container {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  padding: 14px 14px 8px;
+  min-height: 260px;
+  max-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
- .container {
-  border: 1px solid;
-  width: 400px;
-  height: 200px;
-  text-align: center;
-  text-transform: capitalize;
-  font-weight: 600;
-  font-size: 20px;
+
+.column-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tasks {
   overflow-y: auto;
   overflow-x: hidden;
-
-  scrollbar-width: none;  
+  scrollbar-width: thin;
+  padding-right: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.container::-webkit-scrollbar {
-  display: none; 
-}
+.container.completed .column-title { color: var(--success); }
+.container.pending .column-title { color: var(--warning); }
+.container.in-progress .column-title { color: var(--info); }
 
-.completed{
-    color: green;
-}
-.pending{
-    color: red;
-}
-.in-progress{
-    color: blue;
-}
+/* Legacy class kept for safety; no layout here */
+.card{ }
 
 @media (max-width: 625px) {
-    .container{
-        width: 500px;
-    }
+  .container{ min-height: 220px; }
 }
 @media (max-width: 550px) {
-    .card {
-        display: flex;
-        justify-content: center;
-    }
-    .container{
-        width: 300px;
-    }
+  .container{ min-height: 200px; }
 }
